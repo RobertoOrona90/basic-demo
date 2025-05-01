@@ -1,0 +1,8 @@
+<h2>Usuarios</h2>
+<ul>
+  <li *ngFor="let user of users()">
+    {{ user.name }} - {{ user.role }} - {{ user.isActive ? 'Activo' : 'Inactivo' }}
+    <button (click)="delete(user.id)">Eliminar</button>
+    <button (click)="toggle(user.id)">Activar/Desactivar</button>
+  </li>
+</ul>
