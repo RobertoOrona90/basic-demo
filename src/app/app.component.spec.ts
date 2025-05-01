@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { UserModule } from '../user/user.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -31,5 +32,13 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Hello, basic-demo');
+  });
+
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [AppComponent],
+      imports: [UserModule] // <== aquí
+    }).compileComponents();
   });
 });
